@@ -1,0 +1,11 @@
+{
+  "types": [
+    { "type": "feat", "section": "新特性" },
+    { "type": "fix", "section": "功能完善" },
+    { "type": "bug", "section": "Bug 修复" },
+    { "type": "test", "section": "测试", "hidden": true },
+    { "type": "build", "section": "构建", "hidden": true },
+    { "type": "refactor", "section": "重构", "hidden": true },
+    { "type": "ci", "hidden": true }
+  ]
+}

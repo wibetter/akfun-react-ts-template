@@ -1,0 +1,80 @@
+{
+  "name": "akfun-react-ts-template",
+  "version": "0.0.1",
+  "keywords": [
+    "react template",
+    "react ts"
+  ],
+  "description": "React&TS项目模板",
+  "scripts": {
+    "dev": "akfun dev --env=local",
+    "build2test": "akfun build --env=test",
+    "build": "akfun build --env=online",
+    "gitadd": "git add .",
+    "ts-check": "tsc --project tsconfig.json && tslint --config tslint.json --project tsconfig.json",
+    "commit-static-files": "git diff-index --quiet HEAD || git commit -m 'chore(prerelease): 发布前构建静态文件'",
+    "prerelease": "standard-version --no-verify",
+    "release": "run-s build gitadd commit-static-files",
+    "format": "prettier --write \"src/**/**/*.{js,jsx,ts,tsx,vue,scss,json}\""
+  },
+  "author": "365533093@qq.com",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:wibetter/akfun-react-ts-template.git"
+  },
+  "bugs": {
+    "url": "https://github.com/wibetter/akfun-react-ts-template/issues"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "lint-staged": {
+    "src/**/**/*.{js,jsx,ts,tsx,vue,scss,json}": [
+      "prettier --write"
+    ]
+  },
+  "dependencies": {
+    "@ant-design/icons": "4.0.0",
+    "antd": "4.7.3",
+    "axios": "^0.19.2",
+    "classnames": "^2.2.6",
+    "lodash": "^4.17.15",
+    "mobx": "5.9.4",
+    "mobx-react": "6.1.3",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "react-helmet": "^6.1.0",
+    "react-router-dom": "^5.0.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-conventional": "^9.1.1",
+    "@types/classnames": "^2.2.10",
+    "@types/lodash": "^4.14.149",
+    "@types/react": "^16.4.7",
+    "@types/react-dom": "^16.0.6",
+    "@types/react-helmet": "^6.1.0",
+    "@types/react-router-dom": "^5.1.3",
+    "akfun": "^1.5.12",
+    "husky": "4.2.3",
+    "npm-run-all": "^4.1.5",
+    "prettier": "1.19.1",
+    "standard-version": "7.1.0"
+  },
+  "engines": {
+    "node": ">= 10.13.0",
+    "npm": ">= 6.4.1"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8",
+    "iOS >= 8",
+    "Firefox >= 20",
+    "Android > 4.4"
+  ]
+}

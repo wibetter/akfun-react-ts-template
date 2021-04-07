@@ -1,0 +1,116 @@
+@charset "utf-8";
+
+/* 栅格布局相关样式 */
+.widget-container {
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+}
+
+/* 非一级块容器需要设置flex属性 */
+/*.widget-container.widget-container-second:not(.widget-absolute-container),*/
+.widget-container.widget-container-second:not(.widget-fixed-container) {
+  flex: auto;
+}
+
+/* 固定布局的块级容器样式 */
+.widget-fixed-container {
+  position: fixed !important;
+  z-index: 100;
+}
+
+/* 绝对布局的块级容器样式 */
+.widget-absolute-container {
+  position: absolute;
+  z-index: 100;
+}
+
+/* 行级布局容器 */
+.widget-container > .widget-row {
+  flex: auto;
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+}
+
+/* 单元布局容器 */
+.widget-row > .widget-column {
+  flex: 1 1 160px;
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+/* 实体组件容器: 一个组件容器只放一个实体组件 */
+.widget-column > .jdw-widget {
+  flex: 1 1 auto;
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* 实体组件内容盒子 */
+.jdw-widget > .widget-content,
+.widget-content > .widgetContBox {
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* 实体组件内部超出区域进行隐藏 */
+.widget-content > .widgetContBox {
+  overflow: visible;
+}
+
+/* ui元件默认样式 */
+.widget-column > .ui-materiel {
+  position: relative;
+  line-height: 16px;
+}
+
+/* 占位，组件占位 */
+.widget-column > .widget-slot,
+.widget-column > .elem-slot,
+.widget-column > .embed-widget-slot {
+  flex: 1 1 160px;
+  position: relative;
+  width: 100%;
+  min-width: 100px;
+  min-height: 100px;
+  background-color: transparent;
+  border: none;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.widget-column > .widget-slot:after,
+.widget-column > .elem-slot:after,
+.widget-column > .embed-widget-slot:after {
+  content: "占位";
+  position: absolute;
+  top: calc(50% - 10px);
+  left: calc(50% - 30px);
+  width: 60px;
+  text-align: center;
+}
+
+/* 不可见的元素将其隐藏 */
+.widget-container.elem-hidden,
+.widget-container > .widget-row.elem-hidden,
+.widget-row > .widget-column.elem-hidden,
+.widget-column > .jdw-widget.elem-hidden {
+  display: none;
+}

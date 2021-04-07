@@ -1,0 +1,67 @@
+@charset "utf-8";
+
+.ant-modal-header {
+  border: none;
+}
+
+.ant-layout {
+  background-color: #f5f6fa;
+}
+
+.text-center {
+  width: 100%;
+  text-align: center;
+}
+
+.submit-btn,
+.submit-btn:focus,
+.submit-btn:active {
+  min-width: 88px;
+  height: 32px;
+  background: $theme-color;
+  border-radius: 16px;
+  color: white;
+}
+.submit-btn:hover {
+  background: $theme-color2;
+  color: white;
+}
+
+.cancel-btn,
+.cancel-btn:focus,
+.cancel-btn:active {
+  min-width: 88px;
+  height: 32px;
+  margin-right: 30px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0px 2px 8px 0px rgba(230, 233, 242, 1);
+}
+.cancel-btn:hover {
+  border-color: $theme-color2;
+  color: $theme-color2;
+}
+
+/* 重置 table style  */
+.ant-table-small > .ant-table-content > .ant-table-body {
+  margin: 0;
+}
+.ant-table-column-title {
+  font-family: Helvetica;
+  font-size: 14px;
+  color: rgba(41, 43, 51, 1);
+}
+
+.ant-list-grid .ant-col > .ant-list-item {
+  display: block;
+  max-width: 100%;
+  margin-bottom: 18px;
+  padding-top: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+#MyUIWidget {
+  position: relative;
+  min-height: 100vh;
+}

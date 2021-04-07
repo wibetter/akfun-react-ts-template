@@ -1,0 +1,107 @@
+@charset "utf-8";
+
+/** common.css前半部分用于重置系统默认的样式，后半部分用于放置系统页面常用的样式（用于减少重复css代码）
+  注意事项：通常在一级页面使用，避免组件内引用，以免出现重新的css代码
+*/
+
+/* 重置系统默认的样式 */
+body {
+  margin: 0;
+  border-width: 0;
+  padding: 0;
+}
+
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td,
+hr,
+i,
+button,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  margin: 0;
+  padding: 0;
+  border-width: 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+/*滚动样式重置*/
+::-webkit-scrollbar {
+  background-color: #fff;
+  width: 6px;
+  height: 6px;
+  background-clip: padding-box;
+}
+
+/*滚动条中间滑动部分*/
+::-webkit-scrollbar-thumb {
+  background-color: #dedede;
+  border-radius: 6px;
+  width: 6px;
+  height: 6px;
+}
+
+/* 系统页面常用的样式 */
+
+/* 常用的按钮样式 */
+.btn-box {
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* 提交按钮的样式 */
+.submit-btn,
+.submit-btn:focus,
+.submit-btn:active {
+  min-width: 100px;
+  height: 32px;
+  background: #2c63ff;
+  border-radius: 16px;
+  color: white;
+}
+
+.submit-btn:hover {
+  background: rgba(44, 99, 255, 0.85);
+  color: white;
+}
+
+.margin-left-x10 {
+  margin-left: 10px;
+}
+
+html {
+  font-size: 14px;
+}

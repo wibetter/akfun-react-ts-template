@@ -1,0 +1,118 @@
+/* 公共的自定义函数 */
+
+@function px2vw($px, $screen-width: 750) {
+  @return ($px / $screen-width) * 100vw;
+}
+
+@function px2rem($px, $remRate: 100) {
+  @return ($px / $remRate) + rem;
+}
+
+@function px2vmin($px, $screen-width: 750) {
+  @return ($px / $screen-width) * 100vmin;
+}
+
+// type 为top 或者 bottom
+@mixin borderTopOrBtm($type) {
+  &:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    #{$type}: 0;
+    width: 100%;
+    height: 1px;
+    background: $borderColor;
+    transform: scaleY(0.5);
+  }
+}
+
+// type为 right 或者 left
+@mixin borderRtOrLt($type) {
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    #{$type}: 0;
+    height: 100%;
+    width: 1px;
+    background: $borderColor;
+    transform: scaleX(0.5);
+  }
+}
+
+//超出1行显示...
+@mixin ellipsis1 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// 超出多行显示...
+@mixin ellipsis($num) {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: $num;
+  -webkit-box-orient: vertical;
+}
+
+@mixin fillBox {
+  width: 100%;
+  height: 100%;
+}
+
+/* 底部导航盒子样式 */
+@mixin fixedBottomBox {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+// 头部细线
+@mixin borderTop {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  width: 100%;
+  height: 1px;
+  background: #ddd;
+  transform: scaleY(0.5);
+}
+
+// 底部细线
+@mixin borderBtm {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background: #ddd;
+  transform: scaleY(0.5);
+}
+
+@mixin svgBg(
+  $color,
+  $url: '',
+  $size: auto,
+  $pst: center center,
+  $repeat: no-repeat
+) {
+  background-color: $color;
+  @if $url == '' {
+    -webkit-mask: $repeat;
+    mask: $repeat;
+  } @else {
+    -webkit-mask: url($url) $repeat;
+    mask: url($url) $repeat;
+  }
+  -webkit-mask-size: $size;
+  mask-size: $size;
+  -webkit-mask-position: $pst;
+  mask-position: $pst;
+}
