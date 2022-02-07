@@ -10,7 +10,7 @@ module.exports = {
   settings: {
     enableESLint: false, // 调试模式是否开启ESLint，默认开启ESLint检测代码格式
     enableESLintFix: false, // 是否自动修正代码格式，默认不自动修正
-    enableStyleLint: true, // 是否开启StyleLint，默认开启ESLint检测代码格式
+    enableStyleLint: false, // 是否开启StyleLint，默认开启ESLint检测代码格式
     enableStyleLintFix: false // 是否需要StyleLint自动修正代码格式
   },
   webpack: {
@@ -33,24 +33,7 @@ module.exports = {
       },
     },
     // 从输出的 bundle 中排除依赖
-    externals: [
-      {
-        react: {
-          commonjs: 'react',
-          commonjs2: 'react',
-          amd: 'react',
-          root: ['React'],
-        },
-      },
-      {
-        'react-dom': {
-          commonjs: 'react-dom',
-          commonjs2: 'react-dom',
-          amd: 'react-dom',
-          root: ['ReactDOM'],
-        },
-      },
-    ],
+    externals: [],
     // sassResources中的sass文件会自动注入每一个sass文件中
     sassResources: [
       resolve('./src/assets/scss/mixin.scss'),
@@ -65,19 +48,19 @@ module.exports = {
     },
     local: {
       // 本地开发环境
-      '#dataApiBase#': 'http://jdwidget.jd.com/server/api',// 数据接口根地址
+      '#dataApiBase#': '/server/api',// 数据接口根地址
       '#assetsPublicPath#': 'http://localhost:1024', // 静态资源根地址
       '#routeBasePath#': '/' // 路由根地址
     },
     test: {
       // 线上测试环境系统参数（备注：请按需调整）
-      '#dataApiBase#': 'http://jdwidget.jd.com/server/api',// 数据接口根地址
+      '#dataApiBase#': '/server/api',// 数据接口根地址
       '#assetsPublicPath#': 'http://localhost:1024', // 静态资源根地址
       '#routeBasePath#': '/' // 路由根地址
     },
     online: {
       // 线上正式环境系统参数（备注：请按需调整）
-      '#dataApiBase#': 'http://jdwidget.jd.com/server/api',// 数据接口根地址
+      '#dataApiBase#': '/server/api',// 数据接口根地址
       '#assetsPublicPath#': 'http://localhost:1024', // 静态资源根地址
       '#routeBasePath#': '/' // 路由根地址
     }
